@@ -562,8 +562,8 @@ import subprocess
 #     return HTML2(html_embed(vid, filetype=None, maxduration=60,
 #                             center=True, rd_kwargs=rd_kwargs, **html_kw))
 
-data_path = Path('../input/abstraction-and-reasoning-challenge/')
-# data_path = Path('.') # Artyom: it's better use symlinks locally
+# data_path = Path('../input/abstraction-and-reasoning-challenge/')
+data_path = Path('.') # Artyom: it's better use symlinks locally
 cmap_lookup = [
     '#000000', '#0074D9', '#FF4136', '#2ECC40', '#FFDC00',
     '#AAAAAA', '#F012BE', '#FF851B', '#7FDBFF', '#870C25'
@@ -2200,10 +2200,10 @@ def compute_metrics(prediction_grid, answer_grid):
     n_metrics = 11
 
     def get_metrics(prediction, answer):
-        prediction_empty = (prediction == 0).astype(np.int)
-        answer_empty = (answer == 0).astype(np.int)
+        prediction_empty = (prediction == 0).astype(np.int_)
+        answer_empty = (answer == 0).astype(np.int_)
 
-        right = (prediction == answer).astype(np.int)
+        right = (prediction == answer).astype(np.int_)
         # empty_right = (prediction_empty == answer_empty).astype(np.int)
         #
         accuracy = np.mean(right)
