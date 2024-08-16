@@ -2644,6 +2644,8 @@ py::array_t<ssize_t> cpp_trace_param_automata(py::array_t<ssize_t> input, py::li
     assert(params_list.ndim() == 4);
     assert(input.ndim() == 2);
 
+    std::cout << "static destructor";
+
     AutomatonState state{static_cast<uint>(input.shape()[0]), static_cast<uint>(input.shape()[1])};
     AutomatonParams params;
 
